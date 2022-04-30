@@ -67,7 +67,7 @@ export class OrderItemDeleteComponent implements OnInit {
     if (this.value = 1) {
       this.orderItemService.delete(this.orderItems).subscribe(() => {
         this.orderService.showMessage('Sistema','Item deletado com sucesso!', 'toast-success');
-        this.router.navigate([`/orders/update/${ this.id_order }`]);
+        this.router.navigate([`/orders/${ this.id_order }`]);
       })
     } else {
       this.decline();

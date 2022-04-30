@@ -64,7 +64,7 @@ export class OrderItemUpdateComponent implements OnInit {
     this.orderItemService.update(this.orderItems).subscribe(() => {
       this.orderItemService.showMessage('Sistema', 'Produto Atualizado com Sucesso!', 'toast-success');
       this.orderItemService.create(this.orderItems, this.id_order).subscribe()
-      this.router.navigate([`orders/create/${this.id_order}`]);
+      this.router.navigate([`orders/${this.id_order}`]);
     });
   }
 

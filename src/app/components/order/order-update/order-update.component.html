@@ -26,6 +26,12 @@
                 <option value="ATRASADA"> Atrasada </option>
             </select>
         </div>
+
+        <div class="form-group col-md-4">
+            <label>Data Criação</label>
+            <input type="datetime-local" class="form-control" [(ngModel)]="order.creationDate"
+                name="fone" placeholder="(44) 3055-2222">
+        </div>
     </div>
 
     <button type="button" class="btn btn-light" (click)="orderUpdate()">Atualizar</button>
