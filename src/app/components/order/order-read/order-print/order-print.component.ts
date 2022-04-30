@@ -5,11 +5,11 @@ import { Order } from 'src/app/model/order.model';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
-  selector: 'app-order-page',
-  templateUrl: './order-page.component.html',
-  styleUrls: ['./order-page.component.css']
+  selector: 'app-order-print',
+  templateUrl: './order-print.component.html',
+  styleUrls: ['./order-print.component.css']
 })
-export class OrderPageComponent implements OnInit {
+export class OrderPrintComponent implements OnInit {
 
   order: Order = {
     creationDate: new Date,

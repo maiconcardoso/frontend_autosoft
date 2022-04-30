@@ -13,9 +13,9 @@ import { ItemByOrderComponent } from './order-item/item-by-order/item-by-order.c
 import { LaborByOrderComponent } from './order-labor/labor-by-order/labor-by-order.component';
 import { OrderUpdateComponent } from './order-update/order-update.component';
 //import { AuthGuard } from 'src/app/guards/auth.guard';
-import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
 import { ServiceOrderComponent } from './service-order/service-order.component';
 import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
+import { OrderPrintComponent } from './order-read/order-print/order-print.component';
 
 const routes: Routes = [
   

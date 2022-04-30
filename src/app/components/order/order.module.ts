@@ -16,9 +16,9 @@ import { ItemByOrderComponent } from './order-item/item-by-order/item-by-order.c
 import { OrderItemCreateComponent } from './order-item/order-item-create/order-item-create.component';
 import { OrderItemUpdateComponent } from './order-item/order-item-update/order-item-update.component';
 import { OrderItemDeleteComponent } from './order-item/order-item-delete/order-item-delete.component';
-import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
 import { ServiceOrderComponent } from './service-order/service-order.component';
 import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
+import { OrderPrintComponent } from './order-read/order-print/order-print.component';
 
 
 @NgModule({
