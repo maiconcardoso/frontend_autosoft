@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 import { Order } from 'src/app/model/order.model';
-import { Customer } from 'src/app/model/customer.model'
 import { CustomerService } from 'src/app/services/customer.service';
 import { OrderService } from 'src/app/services/order.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-create',
@@ -12,11 +12,8 @@ import { Router } from '@angular/router';
 })
 export class OrderCreateComponent implements OnInit {
 
-  customers: Customer[];
-  customerFilter: any = { name: '' };
-
   order: Order = {
-    creationDate: null,
+    creationDate: new Date(),
     status: null,
     customer: {
       name: '',
@@ -27,28 +24,43 @@ export class OrderCreateComponent implements OnInit {
       address: '',
       cep: ''
     },
-    items: null,
-    labors: null,
-    amount: null
-  }
+    items: [],
+    labors: [],
+    amount: null,
+    customerName: null
+  };
+  orders: Order[];
+  id_order: string;
 
-  constructor(private serviceCustomer: CustomerService, private serviceOrder: OrderService, private router: Router) { }
+  constructor(private orderService: OrderService,
+    private customerService: CustomerService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.serviceCustomer.readAll().subscribe(response => {
-      this.customers = response;
-    })
-  }
-
-  createOrder() {
-    console.log(this.order.customer);
-    this.serviceOrder.create(this.order).subscribe(() => {
-       this.serviceOrder.showMessage('Sistema', 'Ordem criada com sucesso', 'toast-success')
+    let id = this.route.snapshot.paramMap.get('id');
+    this.customerService.readById(id).subscribe(response => {
+      this.order.customer = response;
     });
   }
 
-  cancel(){
-    this.router.navigate(['orders'])
+  createOrder() {
+    if (this.order.status != null) {
+      this.orderService.create(this.order).pipe(
+        map(response => {
+          this.order.id = response.id;
+          this.id_order = this.order.id.toString();
+          this.orderService.showMessage('Sistema', 'Ordem criada com sucesso!', 'toast-success');
+          this.router.navigate([`orders/${this.id_order}`]);
+        })
+      ).subscribe();
+    } else {
+      this.orderService.showMessage('Sistema', 'Informe a situação  da Ordem!', 'toast-error');
+    }
+  }
+
+  cancel() {
+    this.router.navigate(['orders/create/customer']);
   }
 
 }

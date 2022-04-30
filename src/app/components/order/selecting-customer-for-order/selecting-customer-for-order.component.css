@@ -1,6 +1,9 @@
 h1 {
     margin-bottom: 2rem;
 }
+h4 {
+    margin-left: 0.5rem;
+}
 
 .btn-success{
     background-color: #1cc88a;
@@ -13,3 +16,20 @@ h1 {
     color: white;
     padding: 10px 25px;
 }
+
+.table {
+    width: 100%;
+}
+.scroll {
+    overflow-y: scroll;
+    height: 17rem;
+}
+.search{
+    margin: 1rem 0.5rem;
+}
+.plus {
+    margin-right: 0.8rem;
+    font-size: 2rem;
+}
+
+

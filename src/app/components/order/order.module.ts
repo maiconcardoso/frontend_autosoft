@@ -8,7 +8,6 @@ import { OrderUpdateComponent } from './order-update/order-update.component';
 import { OrderDeleteComponent } from './order-delete/order-delete.component';
 import { SharedModule } from 'src/app/shared-module/shared.module';
 import { OrderReadComponent } from './order-read/order-read.component';
-import { OrderExecutionComponent } from './order-create/order-execution/order-execution.component';
 import { OrderLaborCreateComponent } from './order-labor/order-labor-create/order-labor-create.component';
 import { OrderLaborUpdateComponent } from './order-labor/order-labor-update/order-labor-update.component';
 import { OrderLaborReadComponent } from './order-labor/order-labor-read/order-labor-read.component';
@@ -21,6 +20,7 @@ import { OrderItemUpdateComponent } from './order-item/order-item-update/order-i
 import { OrderItemDeleteComponent } from './order-item/order-item-delete/order-item-delete.component';
 import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
 import { ServiceOrderComponent } from './service-order/service-order.component';
+import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
 
 
 @NgModule({
@@ -29,7 +29,6 @@ import { ServiceOrderComponent } from './service-order/service-order.component';
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    OrderExecutionComponent,
     OrderLaborCreateComponent,
     OrderLaborUpdateComponent,
     OrderLaborReadComponent,
@@ -42,6 +41,7 @@ import { ServiceOrderComponent } from './service-order/service-order.component';
     OrderItemDeleteComponent,
     OrderPrintComponent,
     ServiceOrderComponent,
+    SelectingCustomerForOrderComponent,
   ],
   imports: [
     CommonModule,

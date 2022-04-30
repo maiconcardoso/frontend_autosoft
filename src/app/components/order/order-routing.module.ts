@@ -11,18 +11,18 @@ import { OrderLaborDeleteComponent } from './order-labor/order-labor-delete/orde
 import { OrderLaborUpdateComponent } from './order-labor/order-labor-update/order-labor-update.component';
 import { ItemByOrderComponent } from './order-item/item-by-order/item-by-order.component';
 import { LaborByOrderComponent } from './order-labor/labor-by-order/labor-by-order.component';
-import { OrderExecutionComponent } from './order-create/order-execution/order-execution.component';
 import { OrderUpdateComponent } from './order-update/order-update.component';
 //import { AuthGuard } from 'src/app/guards/auth.guard';
 import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
 import { ServiceOrderComponent } from './service-order/service-order.component';
+import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
 
 const routes: Routes = [
   
   { path: 'orders', component: OrderCrudComponent, /*canActivate: [AuthGuard]*/ },
-  { path: 'orders/create', component: OrderCreateComponent},
+  { path: 'orders/create/customer', component: SelectingCustomerForOrderComponent},
 
-  { path: 'orders/create/customer/:id', component: OrderExecutionComponent},
+  { path: 'orders/create/customer/:id', component: OrderCreateComponent},
   { path: 'orders/:id', component: ServiceOrderComponent},
 
   { path: 'orders/create/:id_order/labors', component: LaborByOrderComponent},
