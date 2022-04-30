@@ -69,7 +69,7 @@ export class OrderUpdateComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate([`/orders/create/${this.id}`]);
+    this.router.navigate([`/orders/${this.id}`]);
   }
 
 }
