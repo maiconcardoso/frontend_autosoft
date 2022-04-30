@@ -64,12 +64,12 @@ export class OrderUpdateComponent implements OnInit {
   orderUpdate() {
     this.orderService.update(this.order).subscribe(() => {
       this.orderService.showMessage('Sistema', "Ordem Atualizada com sucesso!", 'toast-success');
-      this.router.navigate([`/orders/create/${this.id}`]);
+      this.router.navigate([`/orders/${this.id}`]);
     })
   }
 
   cancel(){
-    this.router.navigate([`/orders/create/${this.id}`]);
+    this.router.navigate([`/orders/${this.id}`]);
   }
 
 }

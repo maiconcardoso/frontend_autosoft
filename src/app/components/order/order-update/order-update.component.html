@@ -19,12 +19,18 @@
         <div class="form-group col-md-4">
             <label class="form-label">Situação da Ordem</label>
             <select id="inputState" name="status" [(ngModel)]="order.status" class="form-control">
-                <option selected label="Aguardando" value="WAITING"></option>
-                <option value="PAID"> Paga </option>
-                <option value="DELIVERED"> Entregue </option>
-                <option value="CANCELED"> Cancelada </option>
-                <option value="LATE"> Atrasada </option>
+                <option selected label="Aguardando" value="AGUARDANDO"></option>
+                <option value="PAGA"> Paga </option>
+                <option value="ENTREGUE"> Entregue </option>
+                <option value="CANCELADA"> Cancelada </option>
+                <option value="ATRASADA"> Atrasada </option>
             </select>
+        </div>
+
+        <div class="form-group col-md-4">
+            <label>Data Criação</label>
+            <input type="datetime-local" class="form-control" [(ngModel)]="order.creationDate"
+                name="fone" placeholder="(44) 3055-2222">
         </div>
     </div>
 

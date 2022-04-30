@@ -38,7 +38,7 @@ export class ItemByOrderComponent implements OnInit {
   }
 
   backToOrder() {
-    this.router.navigate([`orders/create/${this.id_order}`]);
+    this.router.navigate([`orders/${this.id_order}`]);
   }
 
 }

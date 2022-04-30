@@ -14,7 +14,7 @@ export class OrderCrudComponent implements OnInit {
   }
 
   navigateToNewOrder(){
-    this.router.navigate(['/orders/create'])
+    this.router.navigate(['/orders/create/customer'])
   }
 
 }

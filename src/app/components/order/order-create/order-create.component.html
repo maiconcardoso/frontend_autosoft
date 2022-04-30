@@ -1,4 +1,59 @@
 <div class="container">
-    <h1>Ordem de Serviço</h1>
-    <app-customer-by-order></app-customer-by-order>
+    <h1>Criar Ordem de Serviço</h1>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" disabled class="form-control" [(ngModel)]="order.customer.name" name="name">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" disabled class="form-control" [(ngModel)]="order.customer.phoneNumber" name="fone">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <input type="text" disabled class="form-control" [(ngModel)]="order.customer.cpf" mask="000.000.000-00"
+                    name="cpf">
+            </div>
+            <div class="form-group col-md-9">
+                <input type="email" disabled class="form-control" [(ngModel)]="order.customer.email" name="email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" disabled class="form-control" [(ngModel)]="order.customer.city" name="city">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" disabled class="form-control" [(ngModel)]="order.customer.address" name="address">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" disabled [(ngModel)]="order.customer.cep" name="cep">
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Data de Criação</label>
+                <p class="lead"> {{ order.creationDate | date:'dd/MM/yyyy' }} </p>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="form-label">Situação da Ordem</label>
+                <select id="inputState" name="status" [(ngModel)]="order.status" class="form-control">
+                    <option selected label="Aguardando" value="AGUARDANDO"></option>
+                    <option value="PAGA"> Paga </option>
+                    <option value="ENTREGUE"> Entregue </option>
+                    <option value="CANCELADA"> Cancelada </option>
+                    <option value="ATRASADA"> Atrasada </option>
+                </select>
+            </div>
+        </div>
+        <div class="btn-crea-can">
+            <button class="btn btn-success" (click)="createOrder()">
+                Gerar OS
+            </button>
+            <button class="btn btn-light" (click)="cancel()">
+                Voltar
+            </button>
+        </div>
+    </form>
 </div>

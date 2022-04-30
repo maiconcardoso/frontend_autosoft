@@ -1,16 +1,14 @@
 <div class="container">
-    <h3>Deletar Ordem De Serviço</h3>
-
-    <div class="buttons">
-        <button class="btn btn-danger" (click)="modal(template)">
-            Deletar
-        </button>
-        <button class="btn btn-primary" (click)="backToListOrders()">
-            Voltar
-        </button>
+    <div class="titles">
+        <h3>Ordem De Serviço</h3>
+        <h4>Nome da Empresa</h4>
+        <p>
+            (44)3565-4527 / (44)99878-2625 
+            <br>
+            Avenida Presidente Tancredo Neves, n° 2559, Jd. Asa Branca - Paranavaí-PR
+        </p>
+        <br>
     </div>
-
-
     <table class="table table-sm" id="table">
         <thead>
             <tr>
@@ -26,10 +24,10 @@
         </tbody>
         <br>
 
-        <thead>
-            <tr>
+        <thead >
+            <tr >
                 <th scope="col">Produto</th>
-                <th scope="col">Grupo</th>
+                <th scope="col">Sub-Grupo</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
                 <th scope="col">SubTotal</th>
@@ -38,7 +36,7 @@
         <tbody>
             <tr *ngFor="let row of order.items">
                 <td> {{ row.product.name }} </td>
-                <td> {{ row.product.groupFamily }} </td>
+                <td> {{ row.product.subGroup }} </td>
                 <td> {{ row.quantity }} </td>
                 <td> {{ row.product.price | currency:'BRL' }} </td>
                 <td> {{ row.subTotal | currency:'BRL' }} </td>
@@ -48,7 +46,7 @@
         <thead>
             <tr>
                 <th scope="col">Serviço</th>
-                <th scope="col">Grupo</th>
+                <th scope="col">Sub-Ggrupo</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
                 <th scope="col">SubTotal</th>
@@ -57,7 +55,7 @@
         <tbody>
             <tr *ngFor="let row of order.labors">
                 <td> {{ row.labor.description }} </td>
-                <td> {{ row.labor.groupFamily }} </td>
+                <td> {{ row.labor.subGroup }} </td>
                 <td> {{ row.quantity }} </td>
                 <td> {{ row.labor.price | currency:'BRL'}} </td>
                 <td> {{ row.subTotal | currency:'BRL' }} </td>
@@ -70,14 +68,19 @@
                 <td> {{ order.amount | currency:'BRL' }} </td>
             </tr>
         </tbody>
-
-        <ng-template #template>
-            <div class="modal-body text-center">
-                <p>Deseja realmente excluir a Ordem do cliente {{ order.customer.name }}?</p>
-                <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
-                <button type="button" class="btn btn-primary" (click)="decline()">Não</button>
-            </div>
-        </ng-template>
     </table>
-    <br><br>
+    <div class="buttons">
+        <button class="btn">
+            <i class="bi bi-printer" (click)="print()"></i>
+        </button>
+        <button class="btn btn-primary" (click)="backToListOrders()">
+            Voltar
+        </button>
+    </div>
+    <div class="signature">
+        <p class="line">
+            Assinatura:
+            ______________________________________________________________________________________________________
+        </p>
+    </div>
 </div>

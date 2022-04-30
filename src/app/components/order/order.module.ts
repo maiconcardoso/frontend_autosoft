@@ -8,20 +8,17 @@ import { OrderUpdateComponent } from './order-update/order-update.component';
 import { OrderDeleteComponent } from './order-delete/order-delete.component';
 import { SharedModule } from 'src/app/shared-module/shared.module';
 import { OrderReadComponent } from './order-read/order-read.component';
-import { CustomerByOrderComponent } from './order-create/customer-by-order/customer-by-order.component';
-import { OrderExecutionComponent } from './order-create/order-execution/order-execution.component';
 import { OrderLaborCreateComponent } from './order-labor/order-labor-create/order-labor-create.component';
 import { OrderLaborUpdateComponent } from './order-labor/order-labor-update/order-labor-update.component';
-import { OrderLaborReadComponent } from './order-labor/order-labor-read/order-labor-read.component';
 import { OrderLaborDeleteComponent } from './order-labor/order-labor-delete/order-labor-delete.component';
 import { LaborByOrderComponent } from './order-labor/labor-by-order/labor-by-order.component';
 import { ItemByOrderComponent } from './order-item/item-by-order/item-by-order.component';
-import { OrderItemReadComponent } from './order-item/order-item-read/order-item-read.component';
 import { OrderItemCreateComponent } from './order-item/order-item-create/order-item-create.component';
 import { OrderItemUpdateComponent } from './order-item/order-item-update/order-item-update.component';
 import { OrderItemDeleteComponent } from './order-item/order-item-delete/order-item-delete.component';
-import { InsertProductAndLaborComponent } from './order-create/insert-product-and-labor/insert-product-and-labor.component';
-import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
+import { ServiceOrderComponent } from './service-order/service-order.component';
+import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
+import { OrderPrintComponent } from './order-read/order-print/order-print.component';
 
 
 @NgModule({
@@ -30,20 +27,17 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    CustomerByOrderComponent,
-    OrderExecutionComponent,
     OrderLaborCreateComponent,
     OrderLaborUpdateComponent,
-    OrderLaborReadComponent,
     OrderLaborDeleteComponent,
     LaborByOrderComponent,
     ItemByOrderComponent,
     OrderItemCreateComponent,
     OrderItemUpdateComponent,
-    OrderItemReadComponent,
     OrderItemDeleteComponent,
-    InsertProductAndLaborComponent,
     OrderPrintComponent,
+    ServiceOrderComponent,
+    SelectingCustomerForOrderComponent,
   ],
   imports: [
     CommonModule,
@@ -56,7 +50,7 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    CustomerByOrderComponent,
+    ServiceOrderComponent
   ]
 })
 export class OrderModule { }

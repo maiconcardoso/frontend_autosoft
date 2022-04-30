@@ -9,24 +9,27 @@ import { OrderItemUpdateComponent } from './order-item/order-item-update/order-i
 import { OrderLaborCreateComponent } from './order-labor/order-labor-create/order-labor-create.component';
 import { OrderLaborDeleteComponent } from './order-labor/order-labor-delete/order-labor-delete.component';
 import { OrderLaborUpdateComponent } from './order-labor/order-labor-update/order-labor-update.component';
-import { InsertProductAndLaborComponent } from './order-create/insert-product-and-labor/insert-product-and-labor.component';
 import { ItemByOrderComponent } from './order-item/item-by-order/item-by-order.component';
 import { LaborByOrderComponent } from './order-labor/labor-by-order/labor-by-order.component';
-import { OrderExecutionComponent } from './order-create/order-execution/order-execution.component';
 import { OrderUpdateComponent } from './order-update/order-update.component';
-import { AuthGuard } from 'src/app/guards/auth.guard';
-import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
+//import { AuthGuard } from 'src/app/guards/auth.guard';
+import { ServiceOrderComponent } from './service-order/service-order.component';
+import { SelectingCustomerForOrderComponent } from './selecting-customer-for-order/selecting-customer-for-order.component';
+import { OrderPrintComponent } from './order-read/order-print/order-print.component';
 
 const routes: Routes = [
+  
   { path: 'orders', component: OrderCrudComponent, /*canActivate: [AuthGuard]*/ },
-  { path: 'orders/create', component: OrderCreateComponent},
-  { path: 'orders/create/:id', component: InsertProductAndLaborComponent},
-  { path: 'orders/create/customer/:id', component: OrderExecutionComponent},
+  { path: 'orders/create/customer', component: SelectingCustomerForOrderComponent},
+
+  { path: 'orders/create/customer/:id', component: OrderCreateComponent},
+  { path: 'orders/:id', component: ServiceOrderComponent},
+
   { path: 'orders/create/:id_order/labors', component: LaborByOrderComponent},
   { path: 'orders/create/:id_order/labors/:id_labor', component: OrderLaborCreateComponent },
   { path: 'orders/create/:id_order/products', component: ItemByOrderComponent},
   { path: 'orders/create/:id_order/products/:id_item', component: OrderItemCreateComponent},
-
+  
   { path: 'orders/update/:id_order', component: OrderUpdateComponent },
   { path: 'orders/update/:id_order/products/update/:id_item', component: OrderItemUpdateComponent },
   { path: 'orders/update/:id_order/labors/update/:id_labor', component: OrderLaborUpdateComponent },

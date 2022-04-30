@@ -45,7 +45,7 @@ export class OrderLaborUpdateComponent implements OnInit {
     this.id_labor = this.route.snapshot.paramMap.get('id_labor');
     this.orderLaborService.readById(this.id_labor).subscribe(response => {  
       this.orderLabors = response;
-      console.log(this.orderLabors)
+      //console.log(this.orderLabors)
     });
 
     const id = this.route.snapshot.paramMap.get('id_order');
@@ -64,12 +64,12 @@ export class OrderLaborUpdateComponent implements OnInit {
     this.orderLaborService.update(this.orderLabors).subscribe(() => {
       this.orderLaborService.showMessage('Sistema', 'Serviço Atualizado com Sucesso!', 'toast-success');
       this.orderLaborService.create(this.orderLabors, this.id_order).subscribe()
-      this.router.navigate([`orders/create/${this.id_order}`]);
+      this.router.navigate([`orders/${this.id_order}`]);
     });
   }
 
   cancel(){
-    this.router.navigate([`orders/create/${this.id_order}`]);
+    this.router.navigate([`orders/${this.id_order}`]);
   }
 
 }

@@ -63,7 +63,7 @@ export class OrderLaborDeleteComponent implements OnInit {
     if (this.value == 1) {
       this.orderLaborService.delete(this.orderLabors).subscribe(() => {
         this.orderService.showMessage('Sistema','Serviço deletado com sucesso!', 'toast-success');
-        this.router.navigate([`/orders/update/${ this.id_order }`]);
+        this.router.navigate([`/orders/${ this.id_order }`]);
       })
     } else {
       this.decline();
@@ -71,7 +71,7 @@ export class OrderLaborDeleteComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate([`orders/create/${this.id_order}`]);
+    this.router.navigate([`orders/${this.id_order}`]);
   }
 
 

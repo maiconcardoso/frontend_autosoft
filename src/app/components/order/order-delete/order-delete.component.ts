@@ -29,9 +29,10 @@ export class OrderDeleteComponent implements OnInit {
     amount: null
   };
   modalRef: BsModalRef;
+  value: number;
 
-  constructor(private router: Router, 
-    private orderService: OrderService, 
+  constructor(private router: Router,
+    private orderService: OrderService,
     private route: ActivatedRoute,
     private modalService: BsModalService) { }
 
@@ -42,11 +43,14 @@ export class OrderDeleteComponent implements OnInit {
     });
   }
 
-  deleteOrder(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
-    if (this.confirm()) {
+  modal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
+  }
+
+  deleteOrder() {
+    if (this.value = 1) {
       this.orderService.delete(this.order).subscribe(() => {
-        this.orderService.showMessage('Sistema','Ordem deletada com sucesso!', 'toast-success');
+        this.orderService.showMessage('Sistema', 'Ordem deletada com sucesso!', 'toast-success');
         this.router.navigate(['/orders']);
       })
     } else {
@@ -54,18 +58,19 @@ export class OrderDeleteComponent implements OnInit {
     }
   }
 
-  backToListOrders(){
-    this.router.navigate(['orders']);
+  backToListOrders() {
+    this.router.navigate([`orders/${this.order.id}`]);
   }
 
-  confirm(): boolean {
+  confirm(): void {
+    this.value = 1
     this.modalRef.hide();
-    return true;
+    this.deleteOrder();
   }
- 
-  decline(): boolean {
+
+  decline(): void {
+    this.value = 2
     this.modalRef.hide();
-    return false
   }
 
 }
