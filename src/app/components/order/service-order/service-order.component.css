@@ -16,6 +16,7 @@ h4 {
 }
 .delete{
     color: brown;
+    cursor: pointer;
 }
 
 .btn-back{

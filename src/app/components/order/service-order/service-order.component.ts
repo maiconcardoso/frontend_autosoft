@@ -56,6 +56,14 @@ export class ServiceOrderComponent implements OnInit {
     }
   }
 
+  deleteOrder() {
+    if (this.order.items > [] && this.order.labors > []) {
+      this.orderService.showMessage('Sistema', 'Existem produtos e serviços vinculados a ordem, delete-os primeiro.', 'toast-error');
+    } else {
+      this.router.navigate([`orders/delete/${this.id}`])
+    }
+  }
+
   printOrder() {
     this.router.navigate([`/orders/order-print/${ this.id }`])
   }

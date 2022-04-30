@@ -24,6 +24,9 @@
                     <a routerLink="/orders/update/{{ order.id }}" class="edit">
                         <i class="bi bi-pencil-fill"></i>
                     </a>
+                    <a  class="delete">
+                        <i (click)="deleteOrder()" class="bi bi-trash-fill"></i>
+                    </a>
                 </td>
             </tr>
         </tbody>
