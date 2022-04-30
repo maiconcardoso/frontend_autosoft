@@ -4,11 +4,11 @@ import { Order } from 'src/app/model/order.model';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
-  selector: 'app-insert-product-and-labor',
-  templateUrl: './insert-product-and-labor.component.html',
-  styleUrls: ['./insert-product-and-labor.component.css']
+  selector: 'app-service-order',
+  templateUrl: './service-order.component.html',
+  styleUrls: ['./service-order.component.css']
 })
-export class InsertProductAndLaborComponent implements OnInit {
+export class ServiceOrderComponent implements OnInit {
 
   order: Order = {
     creationDate: null,

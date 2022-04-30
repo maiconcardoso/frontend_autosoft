@@ -19,8 +19,8 @@ import { OrderItemReadComponent } from './order-item/order-item-read/order-item-
 import { OrderItemCreateComponent } from './order-item/order-item-create/order-item-create.component';
 import { OrderItemUpdateComponent } from './order-item/order-item-update/order-item-update.component';
 import { OrderItemDeleteComponent } from './order-item/order-item-delete/order-item-delete.component';
-import { InsertProductAndLaborComponent } from './order-create/insert-product-and-labor/insert-product-and-labor.component';
 import { OrderPrintComponent } from './order-read/order-print/order-print/order-print.component';
+import { ServiceOrderComponent } from './service-order/service-order.component';
 
 
 @NgModule({
@@ -40,8 +40,8 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderItemUpdateComponent,
     OrderItemReadComponent,
     OrderItemDeleteComponent,
-    InsertProductAndLaborComponent,
     OrderPrintComponent,
+    ServiceOrderComponent,
   ],
   imports: [
     CommonModule,
@@ -54,6 +54,7 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
+    ServiceOrderComponent
   ]
 })
 export class OrderModule { }
