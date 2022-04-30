@@ -1,0 +1,36 @@
+/* .body {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50em;
+}
+.card-title{
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+button{
+    margin: 20px 15px 0px 0px;
+}
+ */
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.btn-success{
+    background-color: #1cc88a;
+    color: white;
+    padding: 10px 30px;
+    margin-right: 0.5rem;
+}
+.btn-light{
+    background-color:#3f51b5;
+    color: white;
+    padding: 10px 25px;
+}

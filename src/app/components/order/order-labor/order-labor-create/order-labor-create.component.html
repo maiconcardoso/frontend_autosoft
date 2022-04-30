@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Adicionar Serviço a Ordem </h1>
+
+    <form>
+        <div class="form-group ">
+            <label>Descrição do Serviço</label>
+            <input type="text" class="form-control" disabled [(ngModel)]="orderLabors.labor.description"
+                name="description">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Grupo</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="orderLabors.labor.groupFamily"
+                    name="groupFamily">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Sub-Group</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="orderLabors.labor.subGroup"
+                    name="subGroup">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Valor Unitário do Serviço</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="orderLabors.labor.price" currencyMask
+                    [options]="{align: 'left' , prefix: 'R$ ', thousands: '.', decimal: ',' }" name="price">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Aplicação</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="orderLabors.labor.application" name="application">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Quantidade</label>
+                <input type="text" class="form-control" [(ngModel)]="orderLabors.quantity" mask="0000000"
+                    name="quantity" placeholder="Ex. Quantidade de serviços">
+            </div>
+            <div class="form-group col-md-2">
+                <label>Valor Total</label>
+                <div class="form-control">
+                    {{ orderLabors.subTotal | currency:'BRL' }}
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-success" (click)="createLaborByOrder()">
+            Adicionar na Ordem
+        </button>
+        <button class="btn btn-light" (click)="cancel()">
+            Cancelar
+        </button>
+    </form>
+</div>

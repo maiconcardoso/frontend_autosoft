@@ -1,0 +1,29 @@
+.btn-success{
+    background-color: #1cc88a;
+    margin-right: 1rem;
+}
+
+.table {
+    width: 100%;
+}
+
+h4 {
+    margin-bottom: 2rem;
+}
+
+.edit {
+    margin-right: 0.8rem;
+}
+.delete{
+    color: brown;
+}
+
+.btn-back{
+    margin-bottom: 5rem;
+}
+
+.btn-info{
+    float: left;
+    margin-bottom: 1.5rem;
+}
+

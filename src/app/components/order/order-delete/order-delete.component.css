@@ -1,0 +1,11 @@
+.container {
+    align-items: center;
+    width: 50rem;
+}
+.buttons {
+    margin-top: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+.btn {
+    margin-right: 1rem;
+}

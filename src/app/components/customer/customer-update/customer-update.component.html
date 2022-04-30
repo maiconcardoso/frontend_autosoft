@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Atualizar Cliente</h1>
+
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Nome</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.name" name="name" placeholder="Jose da Silva">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Telefone</label>
+            <input type="text" class="form-control" mask="(00) 00000-0000" [(ngModel)]="customer.phoneNumber"
+                name="fone" placeholder="(44) 3055-2222">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>CPF</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.cpf" mask="000.000.000-00" name="cpf"
+                placeholder="223.423.423-42">
+        </div>
+        <div class="form-group col-md-9">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="customer.email" name="email"
+                placeholder="josedasilva@gmail.com">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Cidade</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.city" name="city"
+                placeholder="Paranavaí - PR">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Endereço</label>
+            <input type="text" class="form-control" [(ngModel)]="customer.address" name="address"
+                placeholder="Rua Jóse Lupiom, 337 - Jardim Asa Branca">
+        </div>
+    </div>
+    <div class="form-group">
+        <label>CEP</label>
+        <input type="text" class="form-control" [(ngModel)]="customer.cep" mask="00000-000" name="cep" placeholder="87075-105">
+    </div>
+    <button class="btn btn-primary" (click)="updateCustomer()">
+        Atualizar
+    </button>
+    <button class="btn btn-light" (click)="cancel()">
+        Cancelar
+    </button>
+</form>
+</div>

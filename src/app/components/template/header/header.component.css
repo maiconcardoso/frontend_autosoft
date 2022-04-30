@@ -1,0 +1,10 @@
+.dropdown {
+    margin-top: .5rem;
+    position: absolute;
+    right: 6rem;
+}
+
+span h1 {
+    color: #4876FF;
+    font-size: 2em;
+}

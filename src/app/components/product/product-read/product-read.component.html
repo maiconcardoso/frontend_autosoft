@@ -1,0 +1,48 @@
+<div class="search">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" [(ngModel)]="productFilter.name" placeholder="Nome do Produto..">
+        </div>
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" [(ngModel)]="productFilter.factoryCode" placeholder="Cod. Fabricação..">
+        </div>
+    </div>
+</div>
+
+<div class="scroll">
+    <table class="table table-hover" id="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cod. Fabricação</th>
+                <th scope="col">Grupo</th>
+                <th scope="col">Sub-Grupo</th>
+                <th scope="col">Aplicação</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Valor</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of products | filterBy: productFilter">
+                <th scope="row"> {{ row.id }} </th>
+                <td> {{ row.name }} </td>
+                <td> {{ row.factoryCode }} </td>
+                <td> {{ row.groupFamily }} </td>
+                <td> {{ row.subGroup }} </td>
+                <td> {{ row.application }} </td>
+                <td> {{ row.brand }} </td>
+                <td> {{ row.price | currency:'BRL' }} </td>
+                <td>
+                    <a routerLink="update/{{ row.id }}" class="edit">
+                        <i class="bi bi-pencil-fill"></i>
+                    </a>
+                    <a routerLink="delete/{{ row.id }}" class="delete">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

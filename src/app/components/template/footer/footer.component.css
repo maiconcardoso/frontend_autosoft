@@ -1,0 +1,8 @@
+.container {
+    position: fixed;
+    bottom: 0;
+}
+span {
+    font-size: 1.1rem;
+    font-weight: 200;
+}

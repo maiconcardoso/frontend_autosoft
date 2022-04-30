@@ -1,0 +1,55 @@
+<h4>Inserir Serviço na Ordem</h4>
+<div class="search">
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <input class="form-control" type="text" [(ngModel)]="laborFilter.description" placeholder="Buscar..">
+    </div>
+    <div class="form-group col-md-3">
+      <input id="inputState" type="text" placeholder="Grupo.." name="groupFamily" [(ngModel)]="laborFilter.groupFamily" class="form-control">
+    </div>
+    <div class="form-group col-md-3">
+      <input id="inputState" type="text" placeholder="Sub-Grupo.." name="subGroup" [(ngModel)]="laborFilter.subGroup" class="form-control">
+    </div>
+    <div class="form-group col-md-2">
+      <select id="inputState" name="Aplicação" [(ngModel)]="laborFilter.application" class="form-control">
+        <option selected label="Aplicação">  </option>
+        <option> Álcool/Gasolina </option>
+        <option> Diesel </option>
+        <option> Flex </option>
+    </select>
+    </div>
+  </div>
+</div>
+
+<div class="scroll">
+  <table class="table table-hover" id="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Serviço</th>
+        <th scope="col">Grupo</th>
+        <th scope="col">Sub-Grupo</th>
+        <th scope="col">Aolicação</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of labors | filterBy: laborFilter">
+        <th scope="row"> {{ row.id }} </th>
+        <td> {{ row.description }} </td>
+        <td> {{ row.groupFamily }} </td>
+        <td> {{ row.subGroup }} </td>
+        <td> {{ row.application }} </td>
+        <td> {{ row.price }} </td>
+        <td>
+          <a routerLink="{{ row.id }}" class="edit">
+            <i class="bi bi-plus"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<button type="button" class="btn btn-primary" (click)="backToOrder()">Voltar</button>

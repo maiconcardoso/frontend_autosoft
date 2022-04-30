@@ -1,0 +1,14 @@
+<div class="card">
+    <h1><span>AUTOSOFT</span></h1>
+        <div class="mb-3">
+            <label for="inputUser" class="form-label">Usuário / Email</label>
+            <input type="text" [(ngModel)]="user.username" id="user" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Senha</label>
+            <input type="password" [(ngModel)]="user.password" id="password" class="form-control">
+        </div>
+        <div class="btn-login">
+            <button type="submit" class="btn btn-primary" (click)="login()">Entrar</button>
+        </div>
+</div>

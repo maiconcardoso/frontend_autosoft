@@ -1,0 +1,20 @@
+h4 {
+    margin-left: 0.5rem;
+}
+
+.table {
+    width: 100%;
+}
+.scroll {
+    overflow-y: scroll;
+    height: 17rem;
+}
+.search{
+    margin: 1rem 0.5rem;
+}
+.plus {
+    margin-right: 0.8rem;
+    font-size: 2rem;
+}
+
+

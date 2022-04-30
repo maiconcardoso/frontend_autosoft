@@ -1,0 +1,41 @@
+<div class="search">
+    <input class="form-control" type="text" [(ngModel)]="providerFilter.name" placeholder="Buscar..">
+  </div>
+  
+  <div class="scroll">
+    <table class="table table-hover" id="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">CNPJ</th>
+          <th scope="col">Email</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">CEP</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of providers | filterBy: providerFilter">
+          <th scope="row"> {{ row.id }} </th>
+          <td> {{ row.name }} </td>
+          <td> {{ row.phoneNumber | mask: '(00) 00000-0000' }} </td>
+          <td> {{ row.cnpj | mask: '00.000.000/0000-00' }} </td>
+          <td> {{ row.email }} </td>
+          <td> {{ row.city }} </td>
+          <td> {{ row.address }} </td>
+          <td> {{ row.cep | mask:'00000-000' }} </td>
+          <td>
+            <a routerLink="update/{{ row.id }}" class="edit">
+              <i class="bi bi-pencil-fill"></i>
+            </a>
+            <a routerLink="delete/{{ row.id }}" class="delete">
+              <i class="bi bi-trash"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

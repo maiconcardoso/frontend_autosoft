@@ -1,0 +1,33 @@
+<div class="container">
+    <h4>Atualizar Ordem De Serviço</h4>
+
+    <label class="form-label">Nome do Cliente</label>
+    <div class="form-row">
+        <div class="search form-group col-md-6">
+            <input class="form-control" type="text" [(ngModel)]="customerFilter.name" placeholder="Buscar..">
+        </div>
+
+        <div class="form-group col-md-8">
+            <select id="inputState" name="status" class="form-control">
+                <option *ngFor="let item of customers | filterBy: customerFilter">{{item.name}} </option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label class="form-label">Situação da Ordem</label>
+            <select id="inputState" name="status" [(ngModel)]="order.status" class="form-control">
+                <option selected label="Aguardando" value="WAITING"></option>
+                <option value="PAID"> Paga </option>
+                <option value="DELIVERED"> Entregue </option>
+                <option value="CANCELED"> Cancelada </option>
+                <option value="LATE"> Atrasada </option>
+            </select>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-light" (click)="orderUpdate()">Atualizar</button>
+    <button type="button" class="btn btn-primary" (click)="cancel()">Voltar</button>
+</div>

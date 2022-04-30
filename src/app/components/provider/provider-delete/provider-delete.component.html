@@ -1,0 +1,61 @@
+<div class="container">
+    <h1>Deletar Fornecedor</h1>
+
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Nome</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="provider.name" name="name"
+                    >
+            </div>
+            <div class="form-group col-md-6">
+                <label>Telefone</label>
+                <input type="text" class="form-control" disabled mask="(00) 00000-0000"
+                    [(ngModel)]="provider.phoneNumber" name="fone" >
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>CPF</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="provider.cnpj" mask="00.000.000/0000-00"
+                    name="cpf" >
+            </div>
+            <div class="form-group col-md-9">
+                <label>Email</label>
+                <input type="email" class="form-control" disabled [(ngModel)]="provider.email" name="email"
+                    >
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Cidade</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="provider.city" name="city"
+                    >
+            </div>
+            <div class="form-group col-md-6">
+                <label>Endereço</label>
+                <input type="text" class="form-control" disabled [(ngModel)]="provider.address" name="address"
+                    >
+            </div>
+        </div>
+        <div class="form-group">
+            <label>CEP</label>
+            <input type="text" class="form-control" disabled [(ngModel)]="provider.cep" mask="00000-000" name="cep"
+                >
+        </div>
+        <button class="btn btn-danger" (click)="modal(template)">
+            Deletar
+        </button>
+        <button class="btn btn-light" (click)="cancel()">
+            Cancelar
+        </button>
+
+        <ng-template #template>
+            <div class="modal-body text-center">
+                <p>Deseja realmente excluir o fornecedor {{ provider.name }}?</p>
+                <button type="button" class="btn btn-default" (click)="confirm()">Sim</button>
+                <button type="button" class="btn btn-primary" (click)="decline()">Não</button>
+            </div>
+        </ng-template>
+    </form>
+</div>

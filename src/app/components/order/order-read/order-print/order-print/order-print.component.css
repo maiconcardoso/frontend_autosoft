@@ -1,0 +1,49 @@
+.container {
+    align-items: center;
+    width: 50rem;
+}
+.bi-printer {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}
+.titles{
+    width: 100%;
+}
+h3{
+    margin-left: 40%;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    margin-top: 1rem;
+}
+img{
+    width: 6rem;
+    margin-bottom: 1.5rem;
+    float: right;
+}
+
+.signature{
+    visibility: hidden;
+    margin-top: 5rem;
+}
+
+@media print {
+    .btn {
+        visibility: hidden;
+    }
+    .signature{
+        margin-top: 0;
+        visibility: visible;
+    }
+    img{
+        visibility: visible;
+    }
+    .buttons {
+        margin-top: 0;
+    }
+    .table{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
