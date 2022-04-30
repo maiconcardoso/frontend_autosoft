@@ -75,7 +75,7 @@ export class OrderItemDeleteComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate([`orders/create/${this.id_order}`]);
+    this.router.navigate([`orders/${this.id_order}`]);
   }
 
 
