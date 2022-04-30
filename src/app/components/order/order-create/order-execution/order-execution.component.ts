@@ -60,7 +60,7 @@ export class OrderExecutionComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['orders']);
+    this.router.navigate(['orders/create']);
   }
 
 }

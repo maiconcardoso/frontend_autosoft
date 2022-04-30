@@ -8,7 +8,6 @@ import { OrderUpdateComponent } from './order-update/order-update.component';
 import { OrderDeleteComponent } from './order-delete/order-delete.component';
 import { SharedModule } from 'src/app/shared-module/shared.module';
 import { OrderReadComponent } from './order-read/order-read.component';
-import { CustomerByOrderComponent } from './order-create/customer-by-order/customer-by-order.component';
 import { OrderExecutionComponent } from './order-create/order-execution/order-execution.component';
 import { OrderLaborCreateComponent } from './order-labor/order-labor-create/order-labor-create.component';
 import { OrderLaborUpdateComponent } from './order-labor/order-labor-update/order-labor-update.component';
@@ -30,7 +29,6 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    CustomerByOrderComponent,
     OrderExecutionComponent,
     OrderLaborCreateComponent,
     OrderLaborUpdateComponent,
@@ -56,7 +54,6 @@ import { OrderPrintComponent } from './order-read/order-print/order-print/order-
     OrderReadComponent,
     OrderUpdateComponent,
     OrderDeleteComponent,
-    CustomerByOrderComponent,
   ]
 })
 export class OrderModule { }

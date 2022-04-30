@@ -47,8 +47,8 @@ export class OrderCreateComponent implements OnInit {
     });
   }
 
-  cancel() {
-
+  cancel(){
+    this.router.navigate(['orders'])
   }
 
 }
