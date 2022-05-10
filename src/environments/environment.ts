@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_API: 'https://autosoft-system.herokuapp.com'
+  URL_API: 'http://localhost:8080'
 };
 
 /*
