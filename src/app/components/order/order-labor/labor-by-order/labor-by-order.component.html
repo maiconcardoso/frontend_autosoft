@@ -35,7 +35,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of labors | filterBy: laborFilter">
+      <tr routerLink="{{ row.id }}" *ngFor="let row of labors | filterBy: laborFilter">
         <th scope="row"> {{ row.id }} </th>
         <td> {{ row.description }} </td>
         <td> {{ row.groupFamily }} </td>
@@ -43,7 +43,7 @@
         <td> {{ row.application }} </td>
         <td> {{ row.price }} </td>
         <td>
-          <a routerLink="{{ row.id }}" class="edit">
+          <a class="edit">
             <i class="bi bi-plus"></i>
           </a>
         </td>

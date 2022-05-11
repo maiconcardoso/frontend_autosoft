@@ -26,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let row of items | filterBy: itemFilter">
+      <tr routerLink="{{ row.id }}" *ngFor="let row of items | filterBy: itemFilter">
         <th scope="row"> {{ row.id }} </th>
         <td> {{ row.name }} </td>
         <td> {{ row.factoryCode }} </td>
@@ -36,7 +36,7 @@
         <td> {{ row.brand }} </td>
         <td> {{ row.price }} </td>
         <td>
-          <a routerLink="{{ row.id }}" class="edit">
+          <a  class="edit">
             <i class="bi bi-plus"></i>
           </a>
         </td>
