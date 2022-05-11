@@ -17,12 +17,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let row of customers | filterBy: customerFilter">
+                <tr routerLink="{{row.id}}" *ngFor="let row of customers | filterBy: customerFilter">
                     <th scope="row"> {{ row.id }} </th>
                     <td> {{ row.name }} </td>
                     <td> {{ row.city }} </td>
                     <td>
-                        <a routerLink="{{row.id}}" class="plus">
+                        <a class="plus">
                             <i class="bi bi-box-arrow-in-right"></i>
                         </a>
                     </td>
