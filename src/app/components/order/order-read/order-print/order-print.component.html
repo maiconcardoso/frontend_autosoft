@@ -24,9 +24,9 @@
         </tbody>
         <br>
 
-        <thead *ngIfElse="order.items != []">
+        <thead>
             <tr >
-                <th scope="col">Produto</th>
+                <th scope="col">Descrição</th>
                 <th scope="col">Sub-Grupo</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Valor Unitário</th>
@@ -41,18 +41,6 @@
                 <td> {{ row.product.price | currency:'BRL' }} </td>
                 <td> {{ row.subTotal | currency:'BRL' }} </td>
             </tr>
-        </tbody>
-
-        <thead >
-            <tr>
-                <th scope="col">Serviço</th>
-                <th scope="col">Sub-Ggrupo</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Valor Unitário</th>
-                <th scope="col">SubTotal</th>
-            </tr>
-        </thead>
-        <tbody>
             <tr *ngFor="let row of order.labors">
                 <td> {{ row.labor.description }} </td>
                 <td> {{ row.labor.subGroup }} </td>
