@@ -28,8 +28,9 @@ export class OrderPrintComponent implements OnInit {
     amount: null
   };
 
+  
   constructor(private service: OrderService, private route: ActivatedRoute, private router: Router) { }
-
+  
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.service.readById(id).subscribe(response => {

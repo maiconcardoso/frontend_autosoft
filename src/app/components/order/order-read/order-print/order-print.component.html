@@ -24,7 +24,7 @@
         </tbody>
         <br>
 
-        <thead >
+        <thead *ngIfElse="order.items != []">
             <tr >
                 <th scope="col">Produto</th>
                 <th scope="col">Sub-Grupo</th>
@@ -43,7 +43,7 @@
             </tr>
         </tbody>
 
-        <thead>
+        <thead >
             <tr>
                 <th scope="col">Serviço</th>
                 <th scope="col">Sub-Ggrupo</th>

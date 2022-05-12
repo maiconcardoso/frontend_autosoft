@@ -73,7 +73,6 @@ export class OrderItemService {
   }
   showError(e: any): Observable<any> {
     this.showMessage('Erro!', 'Não foi possível realizar a operação', 'toast-error');
-    this.router.navigate(['notfound']);
     return EMPTY;
   }
 }

@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Novo Produto</h1>
 
-    <form>
+    <form autocomplete="off">
         <div class="form-group ">
             <label>Nome do Produto</label>
             <input type="text" class="form-control" [(ngModel)]="product.name" name="name"
@@ -40,7 +40,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label>Valor</label>
-                <input type="text" class="form-control" [(ngModel)]="product.price" currencyMask
+                <input autocomplete="off" type="text" class="form-control" [(ngModel)]="product.price" currencyMask
                     [options]="{align: 'left' , prefix: 'R$ ', thousands: '.', decimal: ',' }" name="price"
                     placeholder="R$ 54,99">
             </div>
